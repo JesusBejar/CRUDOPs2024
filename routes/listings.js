@@ -5,12 +5,12 @@ const listingsController = require('../controllers/listings');
 
 // these match with functions in ./controllers/listings.js
 // GET ALL
-router.get('/', contactsController.getAll);
+router.get('/', listingsController.getAllListings);
 // CREATE
 router.post('/', listingsController.createListing)
 // UPDATE
 router.put('/:id', listingsController.updateListing)
 // DELETE
-router.delete('/', listingsController.updateListing)
+router.delete('/', listingsController.deleteListing)
 
 module.exports = router;
