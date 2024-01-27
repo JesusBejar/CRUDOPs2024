@@ -3,7 +3,7 @@
 GET http://localhost:3000/listingsAndReviews
 
 
-### Create contact POST
+### Create listing POST
 POST http://localhost:3000/listingsAndReviews HTTP/1.1
 content-type: application/json
 
@@ -32,11 +32,11 @@ content-type: application/json
     "accommodates" : "req.body.accommodates",
     "bedrooms": "req.body.bedrooms",
     "beds":"req.body.beds"
-}
+};
 
-### Update contact PUT
+### Update listing PUT
 # be sure to include specific id num
-PUT http://localhost:3000/listingsAndReviews HTTP/1.1
+PUT http://localhost:3000/listingsAndReviews/10006546 HTTP/1.1
 content-type: application/json
 
 {
@@ -64,4 +64,35 @@ content-type: application/json
     "accommodates" : "req.body.accommodates",
     "bedrooms": "req.body.bedrooms",
     "beds":"req.body.beds2"
-}
+};
+
+### Delete listing DELETE
+DELETE http://localhost:3000/listingsAndReviews/10009999 HTTP/1.1
+content-type: application/json
+
+{
+    "listing_url":"www.",
+    "name":"req.body.name", 
+    "summary":"req.body.summary",
+    "space":"req.body.space",
+    "description":"req.body.description",
+    "neighborhood_overview":"req.body.neighborhood_overview", 
+    "notes":"req.body.notes",
+    "transit":"req.body.transit",
+    "access":"req.body.access",
+    "interaction":"req.body.interaction",
+    "house_rules":"req.body.house_rules",
+    "property_type":"req.property_type",
+    "room_type":"req.body.room_type",
+    "bed_type":"req.body.bed_type",
+    "minimum_nights":"req.body.minimum_nights",
+    "maximum_nights":"req.body.maximum_nights",
+    "cancellation_policy":"req.body.cancellation_policy",
+    "last_scraped":"req.body.last_scraped",
+    "calendar_last_scraped":"req.body.calendar_last_scraped",
+    "first_review":"req.body.first_review",
+    "last_review":"req.body.last_review",
+    "accommodates" : "req.body.accommodates",
+    "bedrooms": "req.body.bedrooms",
+    "beds":"req.body.beds"
+};
