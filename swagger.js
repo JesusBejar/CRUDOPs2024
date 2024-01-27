@@ -2,12 +2,12 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: "Airbnb Listins API",
+        title: "Airbnb Listings API",
         description: "Made 2024 in the CSE341 class"
     },
     // 2nd port (the 1st is in server.js)
     // host: "locahost:3001",
-    host: "localhost:8080",
+    host: "localhost:3000",
     // adding ['http'] here makes the app unsecure??
     schemes: ["https"]
 };

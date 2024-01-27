@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 // });
 
 // checks for traffic in routes/index.js
-app.use('/', require('../routes/index'));
+app.use('/', require('./routes'));
 
 // Start the server
 app.listen(PORT, () => {

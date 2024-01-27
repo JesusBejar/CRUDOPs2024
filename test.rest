@@ -36,7 +36,7 @@ content-type: application/json
 
 ### Update contact PUT
 # be sure to include specific id num
-PUT http://localhost:3000/contacts/65a2d03ef6a4391f67caedc7 HTTP/1.1
+PUT http://localhost:3000/listingsAndReviews HTTP/1.1
 content-type: application/json
 
 {
