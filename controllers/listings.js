@@ -4,6 +4,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 // these match with endpoints in ./routes/contacts.js
+// GET ALL
 const getAllListings = async (req, res) => {
     console.log(mongodb);
     // #swagger.tags=['Contacts']
@@ -52,8 +53,7 @@ const createListing = async (req, res) => {
         res.status(204).send();
     }
     else{
-        // 401 = unauthorized
-        res.status(401).json(response.error || "You done messed up AAron!");
+        res.status(400).json(response.error || "You done messed up AAron!");
     }
 };
 // UPDATE = put
@@ -97,8 +97,7 @@ const updateListing = async (req, res) => {
         res.status(204).send();
     }
     else{
-        // 403 = Forbidden
-        res.status(403).json(response.error || "You done messed up AAron!");
+        res.status(500).json(response.error || "You done messed up AAron!");
     }
 };
 
@@ -106,7 +105,7 @@ const updateListing = async (req, res) => {
 const deleteListing = async (req, res) => {
     // validation code below
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Listing id is invalid, please us a valid listing id');
+        res.status(500).json('Listing id is invalid, please us a valid listing id');
     }
     // execution
     const listingId = new ObjectId(req.params.id);
@@ -143,8 +142,7 @@ const deleteListing = async (req, res) => {
         res.status(204).send();
     }
     else{
-        // 400 = bad request
-        res.status(400).json(response.error || "You done messed up AAron!");
+        res.status(500).json(response.error || "You done messed up AAron!");
     }
 };
 
