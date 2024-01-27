@@ -88,6 +88,6 @@ const updateListing = async () => {
 };
 
 module.exports = {
-    createUser, 
-    updateUser, 
+    createListing, 
+    updateListing, 
 };
