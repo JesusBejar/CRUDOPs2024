@@ -58,6 +58,10 @@ const createListing = async (req, res) => {
 };
 // UPDATE = put
 const updateListing = async (req, res) => {
+    // validation code below
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Listing id is invalid, please us a valid listing id');
+    }
     // execution
     const listingId = new ObjectId(req.params.id);
     const listing = {
@@ -100,6 +104,10 @@ const updateListing = async (req, res) => {
 
 // DELETE = delete
 const deleteListing = async (req, res) => {
+    // validation code below
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Listing id is invalid, please us a valid listing id');
+    }
     // execution
     const listingId = new ObjectId(req.params.id);
     const listing = {
