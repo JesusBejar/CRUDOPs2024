@@ -1,12 +1,6 @@
-const express = require('express');
-const router  = express.Router();
-const listingsController = require('../controllers/listings');
-// const validator = require('../middleware/validate');
+const router = require('express').Router();
 
-// these match with functions in ./controllers/listing.js
-// CREATE
-router.post('/', listingsController.createListing)
-// UPDATE
-router.put('/:id', listingsController.updateListing)
+router.get('/', (req, res) => {res.send('hola mundo')});
+router.use ('/listings', require('/listings'))
 
 module.exports = router;
