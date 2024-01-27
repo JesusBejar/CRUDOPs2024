@@ -3,8 +3,7 @@ const res = require('express/lib/response');
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-
-const createListing = async () => {
+const createListing = () => {
     // execution
     const listing = {
         listing_url:req.body.listing_url,
@@ -32,7 +31,7 @@ const createListing = async () => {
         bedrooms: req.body.bedrooms,
         beds:req.body.beds
     };
-    const response = await mongodb.getDatabase().db().collection('listingsAndReviews').insertOne({_id: listingId}, listing);
+    const response = mongodb.getDatabase().db().collection('listingsAndReviews').insertOne({_id: listingId}, listing);
     // execution check
     if(response.modifiedCount > 0){
         res.status(204).send();
@@ -42,7 +41,7 @@ const createListing = async () => {
         res.status(401).json(response.error || "You done messed up AAron!");
     }
 };
-const updateListing = async () => {
+const updateListing = () => {
     // validation code below
     // if (!ObjectId.isValid(req.params.id)) {
     //     res.status(400).json('Contact id is invalid, please us a valid contact id');
@@ -76,7 +75,7 @@ const updateListing = async () => {
         bedrooms: req.body.bedrooms,
         beds:req.body.beds
     };
-    const response = await mongodb.getDatabase().db().collection('Contacts').replaceOne({_id: listingId}, listing);
+    const response = mongodb.getDatabase().db().collection('listingsAndReviews').replaceOne({_id: listingId}, listing);
     // execution check
     if(response.acknowledged > 0){
         res.status(204).send();

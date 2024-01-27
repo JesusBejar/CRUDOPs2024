@@ -1,6 +1,3 @@
-// index.js
-
-// EXPRESS - installed
 const express = require('express');
 // MONGOOSE - installed
 const mongoose = require('mongoose');
@@ -13,15 +10,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/sample_airbnb', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect('mongodb://localhost:27017/sample_airbnb', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 // checks for traffic in routes/index.js
-app.use('/', require('./routes'));
+app.use('/', require('../routes/index'));
 
 // Start the server
 app.listen(PORT, () => {
