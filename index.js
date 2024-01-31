@@ -42,7 +42,19 @@ app
   .use("/", require('./routes/index.js'))
 
 // checks for traffic in routes/index.js
-app.use('/', require('./routes'));
+  .use('/', require('./routes'))
+  .use(cors({methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']}))
+  .use(cors({ origin: '*'}))
+  .use('/', require('./routes/index.js'));
+
+passport.use(new GithubStrategy({
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
+  callbackURL: process.env.CALLBACK_URL
+},
+function(acessToken, refreshToken, profile, done) {
+  return done(null, profile);
+}))
 
 // Start the server
 mongoDB.initDb((err, mongoDB) => {
