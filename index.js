@@ -56,6 +56,23 @@ function(acessToken, refreshToken, profile, done) {
   return done(null, profile);
 }))
 
+// passport OAuth code below
+passport.serializeUser((user, done) => {
+  done(null, user)
+});
+passport.deserializeUser((user, done) => {
+  done(null, user)
+});
+
+app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `logged in as ${req.session.user.displayName}` : 'Logged Out')});
+
+app.get('/github/callback', passport.authenticate('github', {
+  failureRedirect: '/api-docs', session: false}),
+  (req, res) => {
+    req.session.user = req.user;
+    res.redirect('/');
+  });
+
 // Start the server
 mongoDB.initDb((err, mongoDB) => {
   if (err) {
