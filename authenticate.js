@@ -1,4 +1,4 @@
-const okeydokey = (req, res, next) => {
+const isAuthenticated = (req, res, next) => {
     if (req.session.user === undefined){
         return res.status(401).json('no way josé')
     }
@@ -6,5 +6,5 @@ const okeydokey = (req, res, next) => {
 }
 
 module.exports = {
-    okeydokey
+    isAuthenticated
 }

@@ -1,14 +1,14 @@
 const express = require('express');
+// UI EXPRESS - installed
+const swaggerUi = require("swagger-ui-express");
 // MONGOOSE - installed
-const mongoose = require('mongoose');
+const mongoDB = require('./data/database');
 // BODY-PARSER - installed
 const bodyParser = require('body-parser');
-// SWAGGER-ATUOGEN -installed
-const swaggerAutogen = require('swagger-autogen');
 // PASSPORT - installed
 const passport = require('passport');
 // EXPRESS SESSION - installed
-const sess = require('express-session');
+const session = require('express-session');
 // GITHUB PASSPORT - installed
 const GithubStrategy = require('passport-github2').Strategy;
 // CORS - installed

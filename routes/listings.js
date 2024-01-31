@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const listingsController = require('../controllers/listings');
 // authentication code found in authenticate.js & index.js
-const { isAuthenticated } = require('authenticate.js')
+const { isAuthenticated } = require('../authenticate')
 // const validator = require('../middleware/validate');
 
 // these match with functions in ./controllers/listings.js
