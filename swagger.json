@@ -1,27 +1,231 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Airbnb Listins API",
+    "title": "Airbnb Listings API",
     "description": "Made 2024 in the CSE341 class",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
     "/": {
-      "post": {
+      "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
-    "/{id}": {
+    "/listings/": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "listing_url": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "summary": {
+                  "example": "any"
+                },
+                "space": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "neighborhood_overview": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                },
+                "transit": {
+                  "example": "any"
+                },
+                "access": {
+                  "example": "any"
+                },
+                "interaction": {
+                  "example": "any"
+                },
+                "house_rules": {
+                  "example": "any"
+                },
+                "room_type": {
+                  "example": "any"
+                },
+                "bed_type": {
+                  "example": "any"
+                },
+                "minimum_nights": {
+                  "example": "any"
+                },
+                "maximum_nights": {
+                  "example": "any"
+                },
+                "cancellation_policy": {
+                  "example": "any"
+                },
+                "last_scraped": {
+                  "example": "any"
+                },
+                "calendar_last_scraped": {
+                  "example": "any"
+                },
+                "first_review": {
+                  "example": "any"
+                },
+                "last_review": {
+                  "example": "any"
+                },
+                "accommodates": {
+                  "example": "any"
+                },
+                "bedrooms": {
+                  "example": "any"
+                },
+                "beds": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "example": "any"
+                },
+                "listing_url": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "summary": {
+                  "example": "any"
+                },
+                "space": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "neighborhood_overview": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                },
+                "transit": {
+                  "example": "any"
+                },
+                "access": {
+                  "example": "any"
+                },
+                "interaction": {
+                  "example": "any"
+                },
+                "house_rules": {
+                  "example": "any"
+                },
+                "room_type": {
+                  "example": "any"
+                },
+                "bed_type": {
+                  "example": "any"
+                },
+                "minimum_nights": {
+                  "example": "any"
+                },
+                "maximum_nights": {
+                  "example": "any"
+                },
+                "cancellation_policy": {
+                  "example": "any"
+                },
+                "last_scraped": {
+                  "example": "any"
+                },
+                "calendar_last_scraped": {
+                  "example": "any"
+                },
+                "first_review": {
+                  "example": "any"
+                },
+                "last_review": {
+                  "example": "any"
+                },
+                "accommodates": {
+                  "example": "any"
+                },
+                "bedrooms": {
+                  "example": "any"
+                },
+                "beds": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/listings/{id}": {
       "put": {
         "description": "",
         "parameters": [
@@ -30,11 +234,98 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "example": "any"
+                },
+                "listing_url": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "summary": {
+                  "example": "any"
+                },
+                "space": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "neighborhood_overview": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                },
+                "transit": {
+                  "example": "any"
+                },
+                "access": {
+                  "example": "any"
+                },
+                "interaction": {
+                  "example": "any"
+                },
+                "house_rules": {
+                  "example": "any"
+                },
+                "room_type": {
+                  "example": "any"
+                },
+                "bed_type": {
+                  "example": "any"
+                },
+                "minimum_nights": {
+                  "example": "any"
+                },
+                "maximum_nights": {
+                  "example": "any"
+                },
+                "cancellation_policy": {
+                  "example": "any"
+                },
+                "last_scraped": {
+                  "example": "any"
+                },
+                "calendar_last_scraped": {
+                  "example": "any"
+                },
+                "first_review": {
+                  "example": "any"
+                },
+                "last_review": {
+                  "example": "any"
+                },
+                "accommodates": {
+                  "example": "any"
+                },
+                "bedrooms": {
+                  "example": "any"
+                },
+                "beds": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       }

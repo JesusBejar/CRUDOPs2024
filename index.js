@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // SWAGGER-ATUOGEN -installed
 const swaggerAutogen = require('swagger-autogen');
+// PASSPORT - installed
+const passport = require('passport');
+// EXPRESS SESSION - installed
+const sess = require('express-session');
+// GITHUB PASSPORT - installed
+const GithubStrategy = require('passport-github2').Strategy;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
