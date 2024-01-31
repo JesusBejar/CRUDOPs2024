@@ -11,6 +11,8 @@ const passport = require('passport');
 const sess = require('express-session');
 // GITHUB PASSPORT - installed
 const GithubStrategy = require('passport-github2').Strategy;
+// CORS - installed
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
