@@ -10,17 +10,31 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-// app.use(bodyParser.json());
-// Connect to MongoDB
-// mongoose.connect('mongodb://localhost:27017/sample_airbnb', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-type, Accept, Z-key'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    next();
+    })
+  .use("/", require('./routes/index.js'))
 
 // checks for traffic in routes/index.js
 app.use('/', require('./routes'));
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+mongoDB.initDb((err, mongoDB) => {
+  if (err) {
+    console.log(err)
+  }
+  else {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  }
+})
+
