@@ -15,7 +15,7 @@ const GithubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 
 // Middleware
 app

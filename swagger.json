@@ -5,7 +5,7 @@
     "description": "Made 2024 in the CSE341 class",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "localhost:3010",
   "basePath": "/",
   "schemes": [
     "https"

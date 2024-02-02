@@ -7,9 +7,9 @@ const doc = {
     },
     // 2nd port (the 1st is in server.js)
     // host: "locahost:3001",
-    host: "localhost:3000",
+    host: "localhost:3010",
     // adding ['http'] here makes the app unsecure??
-    schemes: ["https"]
+    schemes: ["http"]
 };
 const outputfile = './swagger.json';
 const endpointsfile = ['./routes/index.js'];
