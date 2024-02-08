@@ -1,10 +1,10 @@
 ///LOCALHOST
 ### get all listings in collection
-GET http://localhost:3000/listingsAndReviews
+GET http://localhost:3010/listingsAndReviews
 
 
 ### Create listing POST
-POST http://localhost:3000/listingsAndReviews HTTP/1.1
+POST http://localhost:3010/listingsAndReviews HTTP/1.1
 content-type: application/json
 
 {
@@ -36,7 +36,7 @@ content-type: application/json
 
 ### Update listing PUT
 # be sure to include specific id num
-PUT http://localhost:3000/listingsAndReviews/10006546 HTTP/1.1
+PUT http://localhost:3010/listingsAndReviews/10006546 HTTP/1.1
 content-type: application/json
 
 {
@@ -67,7 +67,7 @@ content-type: application/json
 };
 
 ### Delete listing DELETE
-DELETE http://localhost:3000/listingsAndReviews/10009999 HTTP/1.1
+DELETE http://localhost:3010/listingsAndReviews/10009999 HTTP/1.1
 content-type: application/json
 
 {

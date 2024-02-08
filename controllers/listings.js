@@ -150,5 +150,5 @@ module.exports = {
     createListing, 
     updateListing, 
     deleteListing, 
-    getAllListings
+    getAllListings,
 };
